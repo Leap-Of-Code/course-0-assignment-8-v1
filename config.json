@@ -1,0 +1,167 @@
+{
+  "version": 1.0,
+  "title": "Assignment 8: While Loops",
+  "quiz": [
+    {
+      "question": "How many times will this `while` loop run?\n```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n  int counter = 4;\n  while (counter < 15) {\n    cout << \"The counter is: \" << counter << endl;\n    counter = counter + 3;\n  }\n\n  return 0;\n}\n```",
+      "options": [
+        {
+          "value": "1",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "4",
+          "answer": true,
+          "explanation": "Correct! The loop will run when `counter` has the values 4, 7, 10, and 13. At `counter == 16`, the loop condition will no long be met."
+        },
+        {
+          "value": "11",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "infinite",
+          "answer": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "How many times will the word \"Yikes\" be printed out?\n```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n  int i = 0;\n  while (i < 10) {\n    int j = 0;\n    while (j < 10) {\n      cout << \"Yikes\";\n      j = j + 1;\n      i = i + 2;\n    }\n    i = i + 1;\n  }\n\n  return 0;\n}\n```",
+      "options": [
+        {
+          "value": "5",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "10",
+          "answer": true,
+          "explanation": "Correct! For each run of the outer loop \"Yikes\" will be printed out ten times and i will be incremented by 21, 1 because of the `i = i + 1` at the end of the loop and 20 because of the `i = i + 2` in the inner loop. Therefore, the outer loop will only run once."
+        },
+        {
+          "value": "40",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "100",
+          "answer": false,
+          "explanation": ""
+        }
+      ]
+    },
+    {
+      "question": "How many times will this `while` loop run?\n```cpp\n#include <iostream>\n#include <string>\nusing namespace std;\n\nint main() {\n  unsigned int i = 10;\n  while (i >= 0) {\n    i--;\n  }\n\n  return 0;\n}\n```",
+      "options": [
+        {
+          "value": "1",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "5",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "10",
+          "answer": false,
+          "explanation": ""
+        },
+        {
+          "value": "infinite",
+          "answer": true,
+          "explanation": "Correct! Because the loop counter `i` is an `unsigned int` instead of an `int`, so it will never be less than 0 and the loop will run forever. This is an easy bug to happen so be catious of it."
+        }
+      ]
+    }
+  ],
+  "fix_code": [
+    {
+      "question": "This code isn't formatted correctly! Can you help fix it?",
+      "hints": [
+        {
+          "line_number": -1,
+          "hint": "Think about spacing and indentation!"
+        }
+      ]
+    },
+    {
+      "question": "This code isn't compiling correctly! Can you help fix it? Be sure to also address any formatting errors.",
+      "hints": [
+        {
+          "line_number": 7,
+          "hint": "All code in a `while` loop should be in curly braces, otherwise your code may have unintending consequences."
+        }
+      ]
+    },
+    {
+      "question": "This code isn't compiling correctly! Can you help fix it? Be sure to also address any formatting errors.",
+      "hints": [
+        {
+          "line_number": 6,
+          "hint": "Variables can only be used if they are in the current scope."
+        }
+      ]
+    },
+    {
+      "question": "This code isn't running correctly! Can you help fix it? Be sure to also address any formatting or syntax errors.",
+      "hints": [
+        {
+          "line_number": 6,
+          "hint": "The end of every line should have a semicolon (`;`)."
+        },
+        {
+          "line_number": 10,
+          "hint": "When using loops, make sure to use the proper operator to update your loop counter."
+        }
+      ]
+    },
+    {
+      "question": "This code isn't running correctly! Can you help fix it? Be sure to also address any formatting or syntax errors.",
+      "hints": [
+        {
+          "line_number": 8,
+          "hint": "Make sure your loop conditionals are correct! Otherwise your loop may never run or run forever."
+        }
+      ]
+    }
+  ],
+  "invent_code": [
+    {
+      "question": "Write a function that will print out the integer division of all whole numbers less then the number given.\n\nExample: `5` print out `5, 2, 1, 1` since `5 / 1 == 5`,  `5 / 2 == 2`, `5 / 3 == 1`, and `5 / 4 == 1`\n\nExample: `3` prints out `3, 1` since `3 / 1 == 3` and `3 / 2 == 1`",
+      "hints": []
+    },
+    {
+      "question": "Write a function to evaluate the factorial of a number input by the user.",
+      "hints": []
+    },
+    {
+      "question": "### Part 1.\nWrite a function to ask the user for an input and print out a triangle.\n\nExample: For input `4`\n```\n####\n###\n##\n#\n```\n\nExample: For input `9`.\n```\n#########\n########\n#######\n######\n#####\n####\n###\n##\n#\n```\n\n### Part 2.\nNow lets print out a pyramid with a width of the input. If the bottom most pyramid piece can't fit in the middle of the previous row, the pyramid should miss the bottom piece as it would topple over otherwise.\n\nExample: For input `4`, the width of the pyramid is 4 wide.\n```\n####\n ##\n```\n\nExample: For input `9`, the width of the pyramid is 9 wide.\n```\n#########\n #######\n  #####\n   ###\n    #\n```\n### Part 3.\nNow, for your pyramid, instead of just printing out `#`, I'd like you to print out a pyramid made of special numerical blocks.\n\nExample: For input `4`, the base of the pyramid is 4 wide and starts and ends at half the width.\n```\n2112\n 11\n```\n\nExample: For input `9`\n```\n432101234\n 3210123\n  21012\n   101\n    0\n```",
+      "hints": []
+    },
+    {
+      "question": "Lets build on your calculator again! On your phone you don't have a 3 number-2 operator or a 4 number-3 operator calculator, you just have a calculator. So now we're going do just that! That said, our calculator will still be an integer calculator, so no need to deal with decimals yet.\n\nYour calculator should ask the user for a number input. Then ask the user for an operator. As long as that operator is not an `=` symbol, you should continue to ask the user of a number and operator. Notice you do not have to account for order of operations here! For some guidance as to what user behavior you are trying to replicate, try pulling out the basic calculator on your phone or [this online version](https://calculator-1.com/).\n\nSome example outputs from such a program:\n```\nEnter a number: 8\nEnter an operator: =\nAnswer: 8\n```\n\n```\nEnter a number: 8\nEnter an operator: +\nEnter a number: 8\n8 + 8 = 16\nEnter an operator: -\nEnter a number: 12\n16 - 12 = 4\nEnter an operator: *\nEnter a number: 10\n4 * 10 = 40\nEnter an operator: /\nEnter a number: 9\n40 / 9 = 4\nEnter an operator: =\nAnswer: 4\n```",
+      "hints": [
+        {
+          "line_number": -1,
+          "hint": "Step 1. Prompt the user for the number of inputs needed."
+        },
+        {
+          "line_number": -1,
+          "hint": "Step 2. Load the first value."
+        },
+        {
+          "line_number": -1,
+          "hint": "Step 3. Loop over the remaining inputs and evaluate the function input."
+        },
+        {
+          "line_number": -1,
+          "hint": "Step 4. Print out the final value of the expression."
+        }
+      ]
+    }
+  ]
+}
