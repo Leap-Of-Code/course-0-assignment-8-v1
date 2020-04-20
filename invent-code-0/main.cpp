@@ -2,8 +2,16 @@
 #include <string>
 using namespace std;
 
-void AllIntegersDivisions(const unsigned int input) {
-  // Write code here.
+void AllIntegersDivisions(const int input) {
+  int starting_num = input - 1;
+  int counter = 0;
+  int print_out;
+  while (counter < input) {
+    print_out = input / starting_num;
+    cout << print_out << endl;
+    counter++;
+    starting_num--;
+  }
 }
 
 int main() {
