@@ -16,7 +16,7 @@ int PrintTriangle (int input) {;
 
   int length_of_line1 = pound.length();
   cout << pound << endl;
-  cout << pound_2; << endl;
+  cout << pound_2 << endl;
   cout << length_of_line1;
   
   return 0;
