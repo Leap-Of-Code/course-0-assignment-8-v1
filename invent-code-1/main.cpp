@@ -2,16 +2,17 @@
 #include <string>
 using namespace std;
 
-int GetFactorial(int z) {
-  while (z > 0) {
-    int answer = 0;
-    answer = z * (z-1) * (z-2);
-    cout << answer;
+void GetFactorial(int z) {
+  int x = z;
+  int answer = z;
+  while (x >= 2) {
+    x--;
+    answer = answer * x;  
   }
+  cout << answer; 
   if (z == 0) {
     cout << "The factorial of 0 is 1.";
   }
-  return 0;
 }
 
 int main() {
