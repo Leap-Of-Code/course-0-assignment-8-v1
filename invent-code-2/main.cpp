@@ -10,19 +10,21 @@ int PrintTriangle (int input) {;
   while (number_pound < input) {
     pound = pound + "#";
     number_pound++;
-    //
-    // 
   }
   cout << pound << endl;
-  
+  string length_of_space;
+
   int length_of_line1 = pound.length();
   while (length_of_line1 > 1) {
   length_of_line1--;
-  pound_2 = pound;
-  pound_2.pop_back();
-  cout << pound_2;
+  length_of_space = length_of_space + " ";
+  pound.erase (pound.begin() + 1);
+  pound.erase (pound.end() - 1);
+  //pound.pop_back();
+  cout << length_of_space << pound << endl;
   }
   return 0;
+}
 
 int main() {
   int input = 0;
