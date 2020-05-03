@@ -5,7 +5,7 @@ using namespace std;
 void GetFactorial(int z) {
   int x = z;
   int answer = z;
-  while (x >= 2) {
+  while (x > 1) {
     x--;
     answer = answer * x;  
   }
