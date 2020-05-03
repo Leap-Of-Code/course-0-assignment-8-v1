@@ -3,21 +3,24 @@
 using namespace std;
 
 int PrintTriangle (int input) {;
-  string pound;
+  string pound = "#";
   string pound_2;
   int number_pound = 1;
 
-  while (number_pound <= input) {
+  while (number_pound < input) {
     pound = pound + "#";
     number_pound++;
-    pound_2 = pound;
-    pound_2.pop_back();
+    //
+    // 
   }
-
-  int length_of_line1 = pound.length();
   cout << pound << endl;
-  cout << pound_2 << endl;
-  cout << length_of_line1;
+  int length_of_line1 = pound.length();
+  while (length_of_line1 > 1);
+  length_of_line1--;
+  pound--;
+  pound_2 = pound;
+  pound_2.pop_back();
+  cout << pound_2;
   
   return 0;
 }
