@@ -14,16 +14,15 @@ int PrintTriangle (int input) {;
     // 
   }
   cout << pound << endl;
+  
   int length_of_line1 = pound.length();
-  while (length_of_line1 > 1);
+  while (length_of_line1 > 1) {
   length_of_line1--;
-  pound--;
   pound_2 = pound;
   pound_2.pop_back();
   cout << pound_2;
-  
+  }
   return 0;
-}
 
 int main() {
   int input = 0;
