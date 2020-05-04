@@ -21,32 +21,35 @@ char GetMathFunction() {
   }
   return function;
 }
-int GetCurrentTotal(int first_number_input, char function, int second_number_input) {
+
+void GetCurrentTotal() {
+  char function = GetMathFunction();
   int current_total = 0;
-  while (function != '=')
+  while (function != '=') {
+    int first_number = GetInteger();
+    function = GetMathFunction();
+    int second_number = GetInteger();
     if (function == '+') {
-    current_total = first_number_input + second_number_input;
+    current_total = first_number + second_number;
     }
     if (function == '%') {
-    current_total = first_number_input % second_number_input;
+    current_total = first_number % second_number;
     }
     if (function == '*') {
-    current_total = first_number_input * second_number_input;
+    current_total = first_number * second_number;
     }
     if (function == '/') {
-    current_total = first_number_input / second_number_input;
+    current_total = first_number / second_number;
     }
     if (function == '-') {
-    current_total = first_number_input - second_number_input;
+    current_total = first_number - second_number;
     }
-  return current_total;
+    cout << first_number << function << second_number << "=" << current_total << endl;
+  }
 }
 
 int main() {
-  int first_number = GetInteger();
-  char function = GetMathFunction();
-  int second_number = GetInteger();
-  int current_total = GetCurrentTotal(first_number, function, second_number);
-  cout << "Your current total is " << current_total << endl;
+  GetCurrentTotal();
+  //cout << "Your current total is " << current_total << endl;
   return 0;
 }
