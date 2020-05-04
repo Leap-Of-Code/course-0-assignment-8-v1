@@ -15,7 +15,7 @@ char GetMathFunction() {
   while (!function_is_valid) {
     cout << "Enter a math function. It must be one of the following: (+, -, *, /, %, =): ";
     cin >> function;
-    if (function == '+' || function == '-' || function == '*' || function == '/') {
+    if (function == '+' || function == '-' || function == '*' || function == '/'|| function == '%') {
       function_is_valid = true;
     }
   }
@@ -44,7 +44,7 @@ void GetCurrentTotal() {
     current_total = first_number - second_number;
     }
     cout << first_number << function << second_number << "=" << current_total << endl;
-    int first_number = current_total
+    first_number = current_total;
     function = GetMathFunction();
     second_number = GetInteger();
   }
