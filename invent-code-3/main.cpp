@@ -15,7 +15,7 @@ char GetMathFunction() {
   while (!function_is_valid) {
     cout << "Enter a math function. It must be one of the following: (+, -, *, /, %, =): ";
     cin >> function;
-    if (function == '+' || function == '-' || function == '*' || function == '/'|| function == '%') {
+    if (function == '+' || function == '-' || function == '*' || function == '/'|| function == '%'|| function == '=') {
       function_is_valid = true;
     }
   }
@@ -38,11 +38,13 @@ void GetCurrentTotal() {
     current_total = first_number * second_number;
     }
     if (function == '/') {
-    current_total = first_number / second_number;
       if (second_number == 0) {
-      cout << " 0 is indivisible, please re-enter an integer:";
-      int second_number = GetInteger(); 
-      current_total = first_number / second_number;
+        cout << " 0 is indivisible, please re-enter an integer:";
+        second_number = GetInteger(); 
+        current_total = first_number / second_number;
+      }
+      else {
+        current_total = first_number / second_number;
       }
     }
     if (function == '-') {
@@ -51,15 +53,15 @@ void GetCurrentTotal() {
     cout << first_number << function << second_number << "=" << current_total << endl;
     first_number = current_total;
     function = GetMathFunction();
+    if (function == '=') {
+     break; 
+    } 
     second_number = GetInteger();
   }
-}
-if (function == "=") {
-cout << "Answer: " << current_total;
+  cout << "Answer: " << current_total;
 }
 
 int main() {
   GetCurrentTotal();
-  //cout << "Your current total is " << current_total << endl;
   return 0;
 }
