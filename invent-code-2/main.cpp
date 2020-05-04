@@ -97,7 +97,7 @@ int main() {
 
   user_input = UserInput();
   cout << "Print out special numerical block pyramid." << endl;
-  NumericalPyramid(user_input);
-
+  NumericalPyramid(user_input);   
+  
   return 0;
 }
