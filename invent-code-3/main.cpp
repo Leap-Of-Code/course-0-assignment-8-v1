@@ -4,7 +4,7 @@ using namespace std;
 
 int GetInteger() {
   int input;
-  cout << "Enter a integer: ";
+  cout << "Enter an integer: ";
   cin >> input;
   return input;
 }
@@ -39,6 +39,11 @@ void GetCurrentTotal() {
     }
     if (function == '/') {
     current_total = first_number / second_number;
+      if (second_number == 0) {
+      cout << " 0 is indivisible, please re-enter an integer:";
+      int second_number = GetInteger(); 
+      current_total = first_number / second_number;
+      }
     }
     if (function == '-') {
     current_total = first_number - second_number;
