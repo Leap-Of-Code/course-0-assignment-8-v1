@@ -23,12 +23,11 @@ char GetMathFunction() {
 }
 
 void GetCurrentTotal() {
-  char function = GetMathFunction();
+    int first_number = GetInteger();
+    char function = GetMathFunction();
+    int second_number = GetInteger();
   int current_total = 0;
   while (function != '=') {
-    int first_number = GetInteger();
-    function = GetMathFunction();
-    int second_number = GetInteger();
     if (function == '+') {
     current_total = first_number + second_number;
     }
@@ -45,6 +44,9 @@ void GetCurrentTotal() {
     current_total = first_number - second_number;
     }
     cout << first_number << function << second_number << "=" << current_total << endl;
+    int first_number = current_total
+    function = GetMathFunction();
+    second_number = GetInteger();
   }
 }
 
