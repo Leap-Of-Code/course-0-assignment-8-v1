@@ -3,25 +3,24 @@
 using namespace std;
 
 int PrintTriangle (int input) {;
-  string pound = "#";
-  string pound_2;
+  int value = input / 2;
   int number_pound = 1;
 
   while (number_pound < input) {
-    pound = pound + "#";
+    value = value - 1;
     number_pound++;
   }
-  cout << pound << endl;
+  cout << value << endl;
   string length_of_space;
-
-  int length_of_line1 = pound.length();
+  string text = to_string(value);
+  int length_of_line1 = text.length();
   while (length_of_line1 > 1) {
   length_of_line1--;
   length_of_space = length_of_space + " ";
-  pound.erase (pound.begin() + 1);
-  pound.erase (pound.end() - 1);
-  //pound.pop_back();
-  cout << length_of_space << pound << endl;
+  text.erase (text.begin() + 1);
+  text.erase (text.end() - 1);
+  //value.pop_back();
+  cout << length_of_space << text << endl;
   }
   return 0;
 }
