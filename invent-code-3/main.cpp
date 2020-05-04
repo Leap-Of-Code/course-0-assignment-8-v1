@@ -54,6 +54,9 @@ void GetCurrentTotal() {
     second_number = GetInteger();
   }
 }
+if (function == "=") {
+cout << "Answer: " << current_total;
+}
 
 int main() {
   GetCurrentTotal();
