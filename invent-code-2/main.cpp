@@ -5,19 +5,18 @@ using namespace std;
 int PrintTriangle (int input) {;
   int value = input / 2;
   int number_pound = 1;
-  
+  string text = to_string(value);
 
   while (number_pound < input && value >= 0) {
     cout << value;
-    if (input % 2 != 0 && value == 0) {
+    if ((value == 1 && input % 2 == 0) || (value == 0 && input % 2 != 0 )) {
       break;
     }
-    else if (value == 1 ) {
-    break;
-    }
     value = value - 1;
+    text = text + to_string(value);
     number_pound++;
   }
+  string text_2 = text; 
 
   while ( number_pound <= input) {
     if (value == input / 2) {
@@ -25,23 +24,23 @@ int PrintTriangle (int input) {;
     }
     if (input % 2 == 0 && value == 1) {
       cout << "1";
+      text_2 = text_2 + "1";
       number_pound++;
     }
   value = value + 1;
   cout << value;
+  text_2 = text_2 + to_string(value);
   number_pound++;
   }
 
   string length_of_space;
-  string text = to_string(value);
-  int length_of_line1 = text.length();
+  int length_of_line1 = text_2.length();
   while (length_of_line1 > 1) {
   length_of_line1--;
   length_of_space = length_of_space + " ";
-  text.erase (text.begin() + 1);
-  text.erase (text.end() - 1);
-  //value.pop_back();
-  cout << length_of_space << text << endl;
+  text_2.erase (text_2.begin());
+  text_2.erase (text_2.end() - 1);
+  cout << endl << length_of_space << text_2;
   }
   return 0;
 }
