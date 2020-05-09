@@ -2,35 +2,35 @@
 #include <string>
 using namespace std;
 
-int PrintTriangle (int input) {;
+int PrintLines (int input) {;
   int value = input / 2;
-  int number_pound = 1;
+  int number_characters = 1;
   string text = to_string(value);
 
-  while (number_pound < input && value >= 0) {
+  while (number_characters < input && value >= 0) {
     cout << value;
     if ((value == 1 && input % 2 == 0) || (value == 0 && input % 2 != 0 )) {
       break;
     }
     value = value - 1;
     text = text + to_string(value);
-    number_pound++;
+    number_characters++;
   }
   string text_2 = text; 
 
-  while ( number_pound <= input) {
+  while ( number_characters <= input) {
     if (value == input / 2) {
     break;
     }
     if (input % 2 == 0 && value == 1) {
       cout << "1";
       text_2 = text_2 + "1";
-      number_pound++;
+      number_characters++;
     }
   value = value + 1;
   cout << value;
   text_2 = text_2 + to_string(value);
-  number_pound++;
+  number_characters++;
   }
 
   string length_of_space;
@@ -49,6 +49,6 @@ int main() {
   int input = 0;
   cout << "What is your input?";
   cin >> input;
-  PrintTriangle(input);
+  PrintLines(input);
   return 0;
 }
