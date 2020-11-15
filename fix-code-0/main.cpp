@@ -2,4 +2,11 @@
 #include <string>
 using namespace std;
 
-int main() {int i=0;while(i<10){cout<<i<< endl;i++;}return 0;}
+int main() {
+
+for (int i = 0; i < 10; i++) {
+  cout<<i<< endl;
+}
+
+return 0;
+}
