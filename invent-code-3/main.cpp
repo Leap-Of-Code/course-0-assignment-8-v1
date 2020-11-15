@@ -2,26 +2,47 @@
 #include <string>
 using namespace std;
 
-int GetInteger() {
-  int input;
-  cout << "Enter a integer: ";
-  cin >> input;
-  return input;
+int GetInputNumber() {
+  int number;
+  cout << "Enter Number: ";
+  cin >> number;
+  return number;
 }
-
-char GetMathFunction() {
-  char function;
-  bool function_is_valid = false;
-  while (!function_is_valid) {
-    cout << "Enter a math function. It must be one of the following: (+, -, *, /, %, =): "
-    cin >> function;
-    if (fuction == '+' || fuction == '-' || fuction == '*' || fuction == '/') {
-      function_is_valid = true;
-    }
+char GetInputOperator() {
+  char operation;
+  cout << "Enter Operator: ";
+  cin >> operation;
+  return operation;
+}
+void FunctionCalculator() {
+  int first_number = GetInputNumber();
+  char operation = GetInputOperator();
+  int second_number = GetInputNumber();
+  int running_total = 0;
+  if (operation == '+') {
+    running_total = first_number + second_number;
   }
-  return function;
+  else if (operation == '%') {
+    running_total = first_number % second_number;
+  }
+  else if (operation == '*') {
+    running_total = first_number * second_number;
+  }
+  else if (operation == '/') {
+    running_total = first_number / second_number;
+  }
+  else {
+    running_total = first_number - second_number;
+  }
+  cout << first_number << " " << operation << " " << second_number << " = " << running_total << endl;
+
 }
 
 int main() {
-  return 0;
+  int calculations;
+  cout << "How many calculations would you like to do? ";
+  cin >> calculations;
+  for (int i = 0; i < calculations; i++) {
+    FunctionCalculator();
+  }
 }
