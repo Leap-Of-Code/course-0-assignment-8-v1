@@ -2,8 +2,10 @@
 #include <string>
 using namespace std;
 
-void AllIntegersDivisions(const unsigned int input) {
-  // Write code here.
+void AllIntegersDivisions(int input) {
+  for (int i = 1; i <= input; i++) {
+    cout << (input/i) << ", ";
+  }
 }
 
 int main() {
@@ -11,6 +13,5 @@ int main() {
   cout << "Enter an integer: ";
   cin >> input;
   AllIntegersDivisions(input);
-
   return 0;
 }
